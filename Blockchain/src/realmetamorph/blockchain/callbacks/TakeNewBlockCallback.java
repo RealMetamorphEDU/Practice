@@ -9,9 +9,8 @@ package realmetamorph.blockchain.callbacks;
 
 import realmetamorph.blockchain.block.Block;
 
-public interface PutBlockCallback {
+public interface TakeNewBlockCallback {
 
-
-    void createdBlock(Block block);
+    void takeNewBlock(Block block);
 
 }

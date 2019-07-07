@@ -5,14 +5,8 @@
  * Copyright (c) 2019.
  ******************************************************************************/
 
-package realmetamorph.blockchain.callbacks;
+package realmetamorph.blockchain.block;
 
-import realmetamorph.blockchain.transactions.SignedTransaction;
-
-import java.util.ArrayList;
-
-public interface AskedTransactionsCallback {
-
-    void askedTransactions(ArrayList<SignedTransaction> transactions);
+public interface IBlockGenerator {
 
 }

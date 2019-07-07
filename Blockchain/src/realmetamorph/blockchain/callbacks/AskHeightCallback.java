@@ -7,10 +7,8 @@
 
 package realmetamorph.blockchain.callbacks;
 
-import realmetamorph.blockchain.block.Block;
+public interface AskHeightCallback {
 
-public interface AskBlockchainCallback {
-
-    Block askedBlock(int blockIndex);
+    int askHeight();
 
 }

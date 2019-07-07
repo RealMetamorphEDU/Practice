@@ -1,39 +1,41 @@
 package realmetamorph.blockchain.network;
 
 import realmetamorph.blockchain.Blockchain;
+import realmetamorph.blockchain.block.Block;
 import realmetamorph.blockchain.callbacks.*;
 import realmetamorph.blockchain.transactions.SignedTransaction;
 
+import java.util.ArrayList;
+
 public interface INetMonitor {
 
+    // Сервисное
     void start(Blockchain.WorkMode workMode);
 
     void stop();
 
-    void askNewBlockInterval(int minutes);
+    // Исходящие запросы
+    Block getBlock(int blockIndex);
 
+    int getHeight();
+
+    ArrayList<SignedTransaction> getTransactionsByPublicKey(String publicKey);
+
+    // Отправка транзакции
     void sendTransaction(SignedTransaction transaction);
 
-    void askBlockchain();
-
-    void askBlock(int blockIndex);
-
-    void askBlockCount();
-
-    void askTransactionsByPublicKey(String publicKey);
-
-    void setCallbackAskBlockchain(AskBlockchainCallback callback);
-
-    void setCallbackTakeBlockCount(AskBlockchainCallback callback);
-
-    void setCallbackTakeBlock(TakeBlockCallback callback);
-
-    void setCallbackPutBlock(PutBlockCallback callback);
-
+    // Получение транзакции
     void setCallbackTakeNewTransaction(TakeNewTransactionCallback callback);
 
-    void setCallbackAskedTransactions(AskedTransactionsCallback callback);
+    // Входящие запросы
+    void setCallbackAskBlock(AskBlockCallback callback);
+
+    void setCallbackAskHeight(AskHeightCallback callback);
 
     void setCallbackAskNewBlock(AskNewBlockCallback callback);
+
+    // Получение нового блока
+    void setCallbackTakeNewBlock(TakeNewBlockCallback callback);
+
 
 }

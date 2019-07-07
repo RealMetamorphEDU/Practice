@@ -1,6 +1,7 @@
 package realmetamorph.blockchain;
 
 import com.sun.istack.internal.NotNull;
+import realmetamorph.blockchain.block.IBlockGenerator;
 import realmetamorph.blockchain.filework.IFileMonitor;
 import realmetamorph.blockchain.network.INetMonitor;
 import realmetamorph.blockchain.transactions.ITransaction;
@@ -15,20 +16,32 @@ public class Blockchain {
 
     private WorkMode workMode;
     private IFileMonitor file;
-    private INetMonitor monitor;
+    private INetMonitor net;
+    private IBlockGenerator blockGenerator;
 
     private HashMap<Integer, Class<?>> registeredTransactions;
     private ArrayList<SignedTransaction> transactionsPool;
 
-
     private boolean started;
 
-    public Blockchain(@NotNull WorkMode workMode, IFileMonitor file, INetMonitor monitor) {
+    public Blockchain(@NotNull WorkMode workMode, IFileMonitor file, INetMonitor net, @NotNull IBlockGenerator blockGenerator) {
+        assert blockGenerator != null;
+
+        assert workMode != WorkMode.SINGLE_MODE || file != null;
+        assert workMode != WorkMode.NODE_MODE || (file != null && net != null);
+        assert workMode != WorkMode.SEND_MODE || net != null;
+
         this.workMode = workMode;
-        transactionsPool = new ArrayList<>();
-        this.monitor = monitor;
+        this.net = net;
         this.file = file;
-        if (monitor != null) {
+        this.blockGenerator = blockGenerator;
+
+        transactionsPool = new ArrayList<>();
+        registeredTransactions = new HashMap<>();
+        if (file != null){
+            //TODO: Добавить инициализацию колбеков.
+        }
+        if (net != null) {
             //TODO: Добавить инициализацию колбеков.
         }
     }
@@ -37,7 +50,7 @@ public class Blockchain {
         if (!started) {
             file.start(workMode);
             if (workMode != WorkMode.SINGLE_MODE) {
-                monitor.start(workMode);
+                net.start(workMode);
             }
             started = true;
         }
@@ -47,19 +60,10 @@ public class Blockchain {
         if (started) {
             file.stop();
             if (workMode != WorkMode.SINGLE_MODE) {
-                monitor.stop();
+                net.stop();
             }
             started = false;
         }
-    }
-
-    public void setBlockInterval(int minutes) {
-        file.setNewBlockInterval(minutes);
-        monitor.askNewBlockInterval(minutes);
-    }
-
-    private void generateBlock() {
-
     }
 
     public boolean registerTransaction(Class<?> transaction) {
@@ -93,16 +97,17 @@ public class Blockchain {
         }
         if (workMode == WorkMode.NODE_MODE) {
             transactionsPool.add(signedTransaction);
-            //broadcastTransaction(signedTransaction);
+            net.sendTransaction(signedTransaction);
         }
         if (workMode == WorkMode.SEND_MODE)
-            ;//broadcastTransaction(signedTransaction);
+            net.sendTransaction(signedTransaction);
         return true;
     }
 
     public ArrayList<SignedTransaction> getTransactionsByPublicKey(String publicKey) {
-        // TODO: Поиск транзакций в блокчейне
-        return null;
+        if (workMode == WorkMode.SEND_MODE)
+            return net.getTransactionsByPublicKey(publicKey);
+        return file.getTransactionsByPublicKey(publicKey);
     }
 
     public enum WorkMode {

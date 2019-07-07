@@ -12,7 +12,7 @@ import realmetamorph.blockchain.transactions.SignedTransaction;
 public interface TakeNewTransactionCallback {
 
 
-    void takeTransaction(SignedTransaction transaction);
+    void takeNewTransaction(SignedTransaction transaction);
 
 
 }

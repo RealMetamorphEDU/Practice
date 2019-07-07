@@ -10,7 +10,6 @@ package realmetamorph.blockchain.filework;
 import realmetamorph.blockchain.Blockchain;
 import realmetamorph.blockchain.block.Block;
 import realmetamorph.blockchain.callbacks.AskNewBlockCallback;
-import realmetamorph.blockchain.callbacks.AskedTransactionsCallback;
 import realmetamorph.blockchain.transactions.SignedTransaction;
 
 import java.util.ArrayList;
@@ -21,14 +20,16 @@ public interface IFileMonitor {
 
     void stop();
 
-    void setNewBlockInterval(int minutes);
+    // Исходящие запросы
+    Block getBlock(int blockIndex);
+
+    int getHeight();
 
     ArrayList<SignedTransaction> getTransactionsByPublicKey(String publicKey);
 
-    Block getBlock(int blockIndex);
+    void addNewBlock(Block block);
 
-    void putNewBlock(Block block);
-
+    // Входящие запросы
     void setCallbackAskNewBlock(AskNewBlockCallback callback);
 
 }
