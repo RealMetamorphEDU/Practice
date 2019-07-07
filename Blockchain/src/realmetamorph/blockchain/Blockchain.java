@@ -24,13 +24,22 @@ public class Blockchain {
 
     private boolean started;
 
+    private String publicKey;
+    private String privateKey;
+
     public Blockchain(@NotNull WorkMode workMode, IFileMonitor file, INetMonitor net, @NotNull IBlockGenerator blockGenerator) {
-        assert blockGenerator != null;
-
-        assert workMode != WorkMode.SINGLE_MODE || file != null;
-        assert workMode != WorkMode.NODE_MODE || (file != null && net != null);
-        assert workMode != WorkMode.SEND_MODE || net != null;
-
+        if (workMode == null)
+            throw new NullPointerException("WorkMode is required!");
+        if (blockGenerator == null)
+            throw new NullPointerException("BlockGenerator is required!");
+        if (workMode == WorkMode.SINGLE_MODE && file == null)
+            throw new NullPointerException("FileMonitor is required for single mode!");
+        if (workMode == WorkMode.NODE_MODE && file == null)
+            throw new NullPointerException("FileMonitor is required for node mode!");
+        if (workMode == WorkMode.NODE_MODE && net == null)
+            throw new NullPointerException("NetMonitor is required for node mode!");
+        if (workMode == WorkMode.SEND_MODE && net == null)
+            throw new NullPointerException("NetMonitor is required for send mode!");
         this.workMode = workMode;
         this.net = net;
         this.file = file;
@@ -38,8 +47,10 @@ public class Blockchain {
 
         transactionsPool = new ArrayList<>();
         registeredTransactions = new HashMap<>();
-        if (file != null){
-            //TODO: Добавить инициализацию колбеков.
+        if (file != null) {
+            file.setCallbackAskNewBlock((int count)->{
+                return null;
+            });
         }
         if (net != null) {
             //TODO: Добавить инициализацию колбеков.
@@ -86,10 +97,10 @@ public class Blockchain {
         return registeredTransactions.getOrDefault(type, null);
     }
 
-    public boolean addTransaction(ITransaction transaction, String privateKey) {
+    public boolean addTransaction(ITransaction transaction) {
         if (!registeredTransactions.containsKey(transaction.getType()))
             return false;
-        SignedTransaction signedTransaction = new SignedTransaction(transaction, privateKey);
+        SignedTransaction signedTransaction = new SignedTransaction(transaction, publicKey, privateKey);
         if (!signedTransaction.isValid())
             return false;
         if (workMode == WorkMode.SINGLE_MODE) {

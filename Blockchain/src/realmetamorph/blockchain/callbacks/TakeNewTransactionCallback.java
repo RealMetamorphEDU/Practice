@@ -11,9 +11,7 @@ import realmetamorph.blockchain.transactions.SignedTransaction;
 
 public interface TakeNewTransactionCallback {
 
-
     void takeNewTransaction(SignedTransaction transaction);
-
 
 }
 

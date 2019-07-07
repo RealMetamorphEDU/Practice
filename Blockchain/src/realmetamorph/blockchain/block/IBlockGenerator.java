@@ -9,4 +9,9 @@ package realmetamorph.blockchain.block;
 
 public interface IBlockGenerator {
 
+
+
+
+
+
 }

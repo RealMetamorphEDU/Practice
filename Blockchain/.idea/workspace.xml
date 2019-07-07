@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b2abb84-d17b-493c-8604-d360cb6e4842" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/block/Block.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/block/BlockInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/monitors/NetMonitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/monitors/NetMonitorTCP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/monitors/NetMonitorUDP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/ITransaction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/SignedTransaction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/TestTransaction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Документация Waves RIDE.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../временное/Описание механизма работы.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../временное/Планирование структуры блокчейна для контроля версий.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../временное/ТЗ.txt" afterDir="false" />
+    <list default="true" id="35fc75d1-afdf-43bb-954e-3799cde5721d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/block/IBlockGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/block/IBlockGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/AskBlockCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/AskBlockCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/AskNewBlockCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/AskNewBlockCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/TakeNewTransactionCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/TakeNewTransactionCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/ITransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/ITransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/SignedTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/SignedTransaction.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,91 +19,50 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="289">
+              <caret line="102" column="90" selection-start-line="102" selection-start-column="90" selection-end-line="102" selection-end-column="90" />
+              <folding>
+                <element signature="method#Blockchain#0;class#Blockchain#0" expanded="true" />
+                <element signature="method#start#0;class#Blockchain#0" expanded="true" />
+                <element signature="method#stop#0;class#Blockchain#0" expanded="true" />
+                <element signature="method#registerTransaction#0;class#Blockchain#0" expanded="true" />
+                <element signature="e#2828#2829#0" expanded="true" />
+                <element signature="e#2898#2899#0" expanded="true" />
+                <element signature="method#getTransactionsByPublicKey#0;class#Blockchain#0" expanded="true" />
+                <element signature="class#WorkMode#0;class#Blockchain#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="123" column="52" lean-forward="true" selection-start-line="123" selection-start-column="52" selection-end-line="123" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1790#1958#0" expanded="true" />
-                <element signature="e#1957#1958#0" expanded="true" />
-                <element signature="e#2156#2324#0" expanded="true" />
-                <element signature="e#2323#2324#0" expanded="true" />
-                <element signature="e#1779#1780#0" expanded="true" />
-                <element signature="e#1818#1819#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/SignedTransaction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+            <state relative-caret-position="255">
+              <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
               <folding>
-                <element signature="e#480#481#0" expanded="true" />
-                <element signature="e#515#516#0" expanded="true" />
-                <element signature="e#564#565#0" expanded="true" />
-                <element signature="e#592#593#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#SignedTransaction#1;class#SignedTransaction#0" expanded="true" />
+                <element signature="e#442#443#0" expanded="true" />
+                <element signature="e#469#470#0" expanded="true" />
+                <element signature="e#513#514#0" expanded="true" />
+                <element signature="e#548#549#0" expanded="true" />
+                <element signature="e#580#581#0" expanded="true" />
+                <element signature="e#608#609#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/TestTransaction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-              <folding>
-                <element signature="e#143#144#0" expanded="true" />
-                <element signature="e#167#168#0" expanded="true" />
-                <element signature="e#217#218#0" expanded="true" />
-                <element signature="e#244#245#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/block/BlockInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/block/Block.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/ITransaction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -131,15 +83,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/TestTransaction.java" />
-        <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/ITransaction.java" />
         <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/NetMonitor.java" />
         <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/monitors/NetMonitorTCP.java" />
         <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/monitors/NetMonitorUDP.java" />
         <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/monitors/NetMonitor.java" />
-        <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/SignedTransaction.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/AskBlockCallback.java" />
+        <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/AskHeightCallback.java" />
+        <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/AskNewBlockCallback.java" />
+        <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/TakeNewTransactionCallback.java" />
+        <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/block/IBlockGenerator.java" />
         <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java" />
+        <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/ITransaction.java" />
+        <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/SignedTransaction.java" />
       </list>
     </option>
   </component>
@@ -155,7 +112,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -179,7 +135,28 @@
               <item name="Blockchain" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="blockchain" type="462c0819:PsiDirectoryNode" />
-              <item name="monitors" type="462c0819:PsiDirectoryNode" />
+              <item name="block" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Blockchain" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Blockchain" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
+              <item name="callbacks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Blockchain" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Blockchain" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
+              <item name="filework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Blockchain" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Blockchain" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
+              <item name="network" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Blockchain" type="b2602c69:ProjectViewProjectNode" />
@@ -192,9 +169,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="D:/WebServer/bin/Python37" />
@@ -225,23 +204,38 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Blockchain" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6b2abb84-d17b-493c-8604-d360cb6e4842" name="Default Changelist" comment="" />
+      <changelist id="35fc75d1-afdf-43bb-954e-3799cde5721d" name="Default Changelist" comment="" />
       <created>1562487639701</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1562487639701</updated>
       <workItem from="1562487659671" duration="10523000" />
       <workItem from="1562501846764" duration="2750000" />
+      <workItem from="1562522733536" duration="10538000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13273000" />
+    <option name="totallyTimeSpent" value="23831000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -253,17 +247,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info id="Image Layers" />
+      <window_info id="Capture Tool" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -273,6 +270,8 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Theme Preview" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -286,6 +285,22 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/BlockchainManager.java" />
@@ -331,27 +346,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/monitors/NetMonitorUDP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/monitors/NetMonitorTCP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/monitors/NetMonitorUDP.java" />
+    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/monitors/NetMonitorTCP.java" />
     <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/TestTransaction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -379,20 +375,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/ITransaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java___jb_tmp___">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-731">
-          <caret line="47" column="32" lean-forward="true" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java___jb_tmp___" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/Timer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -400,38 +383,324 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/monitors/NetMonitor.java">
+    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/monitors/NetMonitor.java" />
+    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/filework/IFileMonitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        <state relative-caret-position="510">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/SignedTransaction.java">
+    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/network/INetMonitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        <state relative-caret-position="629">
+          <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
           <folding>
-            <element signature="e#480#481#0" expanded="true" />
-            <element signature="e#515#516#0" expanded="true" />
-            <element signature="e#564#565#0" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/AskBlockCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" selection-start-line="14" selection-end-line="14" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/AskHeightCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/AskNewBlockCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/TakeNewBlockCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/TakeNewTransactionCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/block/IBlockGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/jre/lib/rt.jar!/sun/security/x509/AlgorithmId.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="98" column="11" selection-start-line="98" selection-start-column="11" selection-end-line="98" selection-end-column="11" />
+          <folding>
+            <element signature="e#6536#6537#0" expanded="true" />
+            <element signature="e#6569#6570#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/jre/lib/rt.jar!/sun/security/rsa/RSASignature.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="152" column="17" lean-forward="true" selection-start-line="152" selection-start-column="17" selection-end-line="152" selection-end-column="17" />
+          <folding>
+            <element signature="method#decodeSignature#0;class#RSASignature#0" expanded="true" />
+            <element signature="class#SHA256withRSA#0;class#RSASignature#0" expanded="true" />
+            <element signature="e#7586#7587#0" expanded="true" />
+            <element signature="e#7654#7655#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/jre/lib/rt.jar!/sun/security/jca/Providers.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="132" column="11" lean-forward="true" selection-start-line="132" selection-start-column="11" selection-end-line="132" selection-end-column="11" />
+          <folding>
+            <element signature="method#getSunProvider#0;class#Providers#0" expanded="true" />
+            <element signature="method#startJarVerification#0;class#Providers#0" expanded="true" />
+            <element signature="method#getProviderList#0;class#Providers#0" expanded="true" />
+            <element signature="method#setProviderList#0;class#Providers#0" expanded="true" />
+            <element signature="method#getFullProviderList#0;class#Providers#0" expanded="true" />
+            <element signature="method#getThreadProviderList#0;class#Providers#0" expanded="true" />
+            <element signature="method#beginThreadProviderList#0;class#Providers#0" expanded="true" />
+            <element signature="method#endThreadProviderList#0;class#Providers#0" expanded="true" />
+            <element signature="initializer##0;class#Providers#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="211" column="6" selection-start-line="211" selection-start-column="6" selection-end-line="211" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/security/Provider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="1834" column="33" lean-forward="true" selection-start-line="1834" selection-start-column="33" selection-end-line="1834" selection-end-column="33" />
+          <folding>
+            <element signature="e#24235#24562#0" expanded="true" />
+            <element signature="e#24568#24821#0" expanded="true" />
+            <element signature="e#24827#25137#0" expanded="true" />
+            <element signature="e#25143#25593#0" expanded="true" />
+            <element signature="e#25599#25922#0" expanded="true" />
+            <element signature="e#25928#26339#0" expanded="true" />
+            <element signature="e#26346#26864#0" expanded="true" />
+            <element signature="e#26870#27318#0" expanded="true" />
+            <element signature="e#27324#27764#0" expanded="true" />
+            <element signature="e#27770#28255#0" expanded="true" />
+            <element signature="e#28261#28572#0" expanded="true" />
+            <element signature="e#28578#28913#0" expanded="true" />
+            <element signature="e#28919#29314#0" expanded="true" />
+            <element signature="e#29320#30462#0" expanded="true" />
+            <element signature="e#29545#29826#0" expanded="true" />
+            <element signature="e#29857#29858#0" expanded="true" />
+            <element signature="e#29926#29927#0" expanded="true" />
+            <element signature="e#29936#30308#0" expanded="true" />
+            <element signature="e#30317#30456#0" expanded="true" />
+            <element signature="e#31123#31610#0" expanded="true" />
+            <element signature="e#31616#32049#0" expanded="true" />
+            <element signature="e#32251#35157#0" expanded="true" />
+            <element signature="e#35163#36693#0" expanded="true" />
+            <element signature="e#37150#37991#0" expanded="true" />
+            <element signature="e#37997#40415#0" expanded="true" />
+            <element signature="e#40421#41112#0" expanded="true" />
+            <element signature="e#41118#41779#0" expanded="true" />
+            <element signature="e#41785#43371#0" expanded="true" />
+            <element signature="e#43377#43984#0" expanded="true" />
+            <element signature="e#43990#44776#0" expanded="true" />
+            <element signature="e#44174#44287#0" expanded="true" />
+            <element signature="e#44383#44697#0" expanded="true" />
+            <element signature="e#44782#45618#0" expanded="true" />
+            <element signature="e#45069#45272#0" expanded="true" />
+            <element signature="e#45281#45612#0" expanded="true" />
+            <element signature="e#45767#46095#0" expanded="true" />
+            <element signature="initializer##0;class#Provider#0" expanded="true" />
+            <element signature="e#48691#49120#0" expanded="true" />
+            <element signature="e#51553#51757#0" expanded="true" />
+            <element signature="e#51895#52077#0" expanded="true" />
+            <element signature="e#52087#52312#0" expanded="true" />
+            <element signature="e#52322#54067#0" expanded="true" />
+            <element signature="e#55165#55780#0" expanded="true" />
+            <element signature="e#55790#59999#0" expanded="true" />
+            <element signature="e#60009#61269#0" expanded="true" />
+            <element signature="e#61279#62955#0" expanded="true" />
+            <element signature="e#62965#65478#0" expanded="true" />
+            <element signature="e#65488#66952#0" expanded="true" />
+            <element signature="e#66962#67526#0" expanded="true" />
+            <element signature="e#67536#68008#0" expanded="true" />
+            <element signature="e#68018#68408#0" expanded="true" />
+            <element signature="e#68418#68970#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/jre/lib/rt.jar!/sun/security/jca/ProviderList.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="263" column="38" selection-start-line="263" selection-start-column="38" selection-end-line="263" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/jre/lib/rt.jar!/sun/security/jca/GetInstance.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/security/Security.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="693" column="37" selection-start-line="693" selection-start-column="37" selection-end-line="693" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/security/MessageDigest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="166" column="41" lean-forward="true" selection-start-line="166" selection-start-column="41" selection-end-line="166" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/math/BigInteger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="203" column="29" selection-start-line="203" selection-start-column="29" selection-end-line="203" selection-end-column="29" />
+          <folding>
+            <element signature="e#12699#14142#0" expanded="true" />
+            <element signature="e#40006#40386#0" expanded="true" />
+            <element signature="e#40429#40430#0" expanded="true" />
+            <element signature="e#40519#40520#0" expanded="true" />
+            <element signature="e#155364#156234#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/nio/HeapByteBuffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+          <folding>
+            <element signature="e#597#792#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/nio/ByteBuffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="991" column="24" selection-start-line="991" selection-start-column="24" selection-end-line="991" selection-end-column="24" />
+          <folding>
+            <element signature="e#9270#10039#0" expanded="true" />
+            <element signature="e#25872#26804#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="123" column="52" lean-forward="true" selection-start-line="123" selection-start-column="52" selection-end-line="123" selection-end-column="52" />
+        <state relative-caret-position="289">
+          <caret line="102" column="90" selection-start-line="102" selection-start-column="90" selection-end-line="102" selection-end-column="90" />
+          <folding>
+            <element signature="method#Blockchain#0;class#Blockchain#0" expanded="true" />
+            <element signature="method#start#0;class#Blockchain#0" expanded="true" />
+            <element signature="method#stop#0;class#Blockchain#0" expanded="true" />
+            <element signature="method#registerTransaction#0;class#Blockchain#0" expanded="true" />
+            <element signature="e#2828#2829#0" expanded="true" />
+            <element signature="e#2898#2899#0" expanded="true" />
+            <element signature="method#getTransactionsByPublicKey#0;class#Blockchain#0" expanded="true" />
+            <element signature="class#WorkMode#0;class#Blockchain#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/nio/charset/spi/CharsetProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="94" column="38" selection-start-line="94" selection-start-column="38" selection-end-line="94" selection-end-column="38" />
+          <folding>
+            <element signature="method#CharsetProvider#0;class#CharsetProvider#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/nio/charset/Charset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2">
+          <caret line="466" column="55" lean-forward="true" selection-start-line="466" selection-start-column="55" selection-end-line="466" selection-end-column="55" />
+          <folding>
+            <element signature="class#ExtendedProviderHolder#0;class#Charset#0" expanded="true" />
+            <element signature="method#extendedProvider#0;class#ExtendedProviderHolder#0;class#Charset#0" expanded="true" />
+            <element signature="class#17453:18336" expanded="true" />
+            <element signature="method#run#0;class#17453:18336" expanded="true" />
+            <element signature="method#lookupExtendedCharset#0;class#Charset#0" expanded="true" />
+            <element signature="method#lookup#0;class#Charset#0" expanded="true" />
+            <element signature="method#lookup2#0;class#Charset#0" expanded="true" />
+            <element signature="method#availableCharsets#0;class#Charset#0" expanded="true" />
+            <element signature="class#23240:24059" expanded="true" />
+            <element signature="method#run#0;class#23240:24059" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/ITransaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+          <folding>
+            <element signature="method#checkSignature#0;class#ITransaction#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/SignedTransaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1790#1958#0" expanded="true" />
-            <element signature="e#1957#1958#0" expanded="true" />
-            <element signature="e#2156#2324#0" expanded="true" />
-            <element signature="e#2323#2324#0" expanded="true" />
-            <element signature="e#1779#1780#0" expanded="true" />
-            <element signature="e#1818#1819#0" expanded="true" />
+            <element signature="method#SignedTransaction#1;class#SignedTransaction#0" expanded="true" />
+            <element signature="e#442#443#0" expanded="true" />
+            <element signature="e#469#470#0" expanded="true" />
+            <element signature="e#513#514#0" expanded="true" />
+            <element signature="e#548#549#0" expanded="true" />
+            <element signature="e#580#581#0" expanded="true" />
+            <element signature="e#608#609#0" expanded="true" />
           </folding>
         </state>
       </provider>

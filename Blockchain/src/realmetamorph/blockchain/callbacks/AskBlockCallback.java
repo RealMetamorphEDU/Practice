@@ -7,10 +7,12 @@
 
 package realmetamorph.blockchain.callbacks;
 
+import com.sun.istack.internal.NotNull;
 import realmetamorph.blockchain.block.Block;
 
 public interface AskBlockCallback {
 
+    @NotNull
     Block askBlock(int blockIndex);
 
 }
