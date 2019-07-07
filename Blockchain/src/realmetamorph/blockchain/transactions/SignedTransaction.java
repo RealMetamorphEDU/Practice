@@ -11,7 +11,7 @@ public class SignedTransaction {
 
     }
 
-    public SignedTransaction(ITransaction transaction) {
+    public SignedTransaction(ITransaction transaction, String privateKey) {
 
     }
 
@@ -23,7 +23,7 @@ public class SignedTransaction {
         return iTransaction;
     }
 
-    public boolean isValid(){
+    public boolean isValid() {
         return false;
     }
 

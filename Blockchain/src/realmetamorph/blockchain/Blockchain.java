@@ -1,96 +1,64 @@
 package realmetamorph.blockchain;
 
-import realmetamorph.blockchain.monitors.NetMonitor;
-import realmetamorph.blockchain.monitors.NetMonitorTCP;
-import realmetamorph.blockchain.monitors.NetMonitorUDP;
+import com.sun.istack.internal.NotNull;
+import realmetamorph.blockchain.filework.IFileMonitor;
+import realmetamorph.blockchain.network.INetMonitor;
 import realmetamorph.blockchain.transactions.ITransaction;
 import realmetamorph.blockchain.transactions.SignedTransaction;
 
 import java.lang.reflect.InvocationTargetException;
-import java.net.InetAddress;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 
 public class Blockchain {
 
-    private final String blockchainFilename; // Файл блокчейна
-    private ArrayList<InetAddress> blockchainNodes; // Другие узлы блокчейна
-    private ArrayList<InetAddress> bannedNodes; // Плохие ноды.
     private WorkMode workMode;
-    private NetMode netMode;
-    private NetMonitor monitor;
+    private IFileMonitor file;
+    private INetMonitor monitor;
 
     private HashMap<Integer, Class<?>> registeredTransactions;
     private ArrayList<SignedTransaction> transactionsPool;
 
-    private int blockInterval; // minutes
-    private Timer timer;
+
     private boolean started;
 
-    public Blockchain(String blockchainFilename, WorkMode workMode, NetMode netMode) {
-        this.blockchainFilename = blockchainFilename;
+    public Blockchain(@NotNull WorkMode workMode, IFileMonitor file, INetMonitor monitor) {
         this.workMode = workMode;
-        this.netMode = netMode;
-        blockchainNodes = new ArrayList<>();
-        bannedNodes = new ArrayList<>();
         transactionsPool = new ArrayList<>();
-        blockInterval = 300;
-        if (workMode == WorkMode.NODE_MODE)
-            if (netMode == NetMode.TCP_MODE) {
-                monitor = new NetMonitorTCP();
-            } else {
-                monitor = new NetMonitorUDP();
-            }
+        this.monitor = monitor;
+        this.file = file;
+        if (monitor != null) {
+            //TODO: Добавить инициализацию колбеков.
+        }
     }
 
     public void start() {
-        if (!started)
-            if (workMode == WorkMode.SINGLE_MODE) {
-                timer = new Timer("nextBlock", true);
-                timer.schedule(new TimerTask() {
-                    @Override
-                    public void run() {
-                        generateBlock();
-                    }
-                }, blockInterval * 1000, blockInterval * 1000);
-                started = true;
-            } else if (workMode == WorkMode.NODE_MODE) {
-                timer = new Timer("nextBlock", true);
-                monitor.start();
-                timer.schedule(new TimerTask() {
-                    @Override
-                    public void run() {
-                        voteBlock(() -> {
-                            generateBlock();
-                        });
-                    }
-                }, blockInterval * 1000, blockInterval * 1000);
-                started = true;
+        if (!started) {
+            file.start(workMode);
+            if (workMode != WorkMode.SINGLE_MODE) {
+                monitor.start(workMode);
             }
+            started = true;
+        }
     }
 
     public void stop() {
-        if (started)
-            if (workMode == WorkMode.SINGLE_MODE) {
-                timer.cancel();
-                timer = null;
-                started = false;
-            } else if (workMode == WorkMode.NODE_MODE) {
+        if (started) {
+            file.stop();
+            if (workMode != WorkMode.SINGLE_MODE) {
                 monitor.stop();
-                timer.cancel();
-                timer = null;
-                started = false;
             }
+            started = false;
+        }
     }
 
     public void setBlockInterval(int minutes) {
-        blockInterval = minutes;
+        file.setNewBlockInterval(minutes);
+        monitor.askNewBlockInterval(minutes);
     }
 
     private void generateBlock() {
-
-    }
-
-    private void voteBlock(Runnable callback) {
 
     }
 
@@ -110,10 +78,14 @@ public class Blockchain {
         return false;
     }
 
-    public boolean addTransaction(ITransaction transaction) {
+    public Class<?> getTransactionClass(int type) {
+        return registeredTransactions.getOrDefault(type, null);
+    }
+
+    public boolean addTransaction(ITransaction transaction, String privateKey) {
         if (!registeredTransactions.containsKey(transaction.getType()))
             return false;
-        SignedTransaction signedTransaction = new SignedTransaction(transaction);
+        SignedTransaction signedTransaction = new SignedTransaction(transaction, privateKey);
         if (!signedTransaction.isValid())
             return false;
         if (workMode == WorkMode.SINGLE_MODE) {
@@ -121,48 +93,19 @@ public class Blockchain {
         }
         if (workMode == WorkMode.NODE_MODE) {
             transactionsPool.add(signedTransaction);
-            broadcastTransaction(signedTransaction);
+            //broadcastTransaction(signedTransaction);
         }
         if (workMode == WorkMode.SEND_MODE)
-            broadcastTransaction(signedTransaction);
+            ;//broadcastTransaction(signedTransaction);
         return true;
     }
 
     public ArrayList<SignedTransaction> getTransactionsByPublicKey(String publicKey) {
-
+        // TODO: Поиск транзакций в блокчейне
         return null;
     }
 
-    public void setBlockchainNodes(ArrayList<InetAddress> blockchainNodes) {
-        this.blockchainNodes = blockchainNodes;
-    }
-
-    public void addBlockchainNode(InetAddress blockchainNode) {
-        if (!blockchainNodes.contains(blockchainNode))
-            blockchainNodes.add(blockchainNode);
-    }
-
-    public void removeBlockchainNode(InetAddress blockchainNode) {
-        blockchainNodes.remove(blockchainNode);
-        bannedNodes.remove(blockchainNode);
-    }
-
-    private void broadcastTransaction(SignedTransaction transaction) {
-        if (netMode == NetMode.TCP_MODE) {
-            // TODO: Рассылка транзакции по TCP
-        } else {
-            // TODO: Рассылка транзакции по UDP
-        }
-    }
-
     public enum WorkMode {
-        SINGLE_MODE,
-        NODE_MODE,
-        SEND_MODE
-    }
-
-    public enum NetMode {
-        TCP_MODE,
-        UDP_MODE
+        SINGLE_MODE, NODE_MODE, SEND_MODE
     }
 }
