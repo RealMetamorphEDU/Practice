@@ -9,18 +9,13 @@ public class TestTransaction implements ITransaction{
     }
 
     @Override
-    public String getPublicKey() {
-        return null;
-    }
-
-    @Override
     public void parseData(byte[] data) {
 
     }
 
     @Override
     public byte[] getData() {
-        return new byte[0];
+        return new byte[]{12, 89, 5, 4, 78};
     }
 
 
