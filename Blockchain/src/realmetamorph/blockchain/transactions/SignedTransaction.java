@@ -14,13 +14,11 @@ public class SignedTransaction {
     private final String receiverKey;
     private final String shaHex;
     private final String signature;
-    private final byte[] transaction;
     private final ITransaction iTransaction;
-    static final int KEY_SIZE = 20; // TODO: Задать константный размер ключа.
+    static final int KEY_SIZE = 20; // TODO: Задать константный размер ключа. 64
     static final int SIGN_SIZE = 20; // TODO: Задать правильный размер подписи
 
     public SignedTransaction(byte[] transaction) throws NoSuchAlgorithmException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        this.transaction = transaction;
         byte[] typeBytes = new byte[4];
         byte[] lenByte = new byte[4];
         byte[] pkBytes = new byte[KEY_SIZE];
@@ -42,8 +40,9 @@ public class SignedTransaction {
         digest.update(typeBytes);
         digest.update(lenByte);
         digest.update(pkBytes);
+        digest.update(rcBytes);
         digest.update(data);
-        byte[] shaBytes = digest.digest();
+        byte[] shaBytes = digest.digest(digest.digest());
         this.shaHex = new BigInteger(1, shaBytes).toString(16);
         Class<?> transactionClass = Blockchain.getTransactionClass(type);
         if (transactionClass == null) {
@@ -53,16 +52,15 @@ public class SignedTransaction {
             this.iTransaction.parseData(data);
         }
         this.signature = new String(signBytes, StandardCharsets.US_ASCII);
-        ;
     }
 
-    public SignedTransaction(ITransaction transaction, String publicKey, String privateKey, String receiverKey) throws NoSuchAlgorithmException {
+    public SignedTransaction(ITransaction iTransaction, String publicKey, String privateKey, String receiverKey) throws NoSuchAlgorithmException {
         this.publicKey = publicKey;
         this.receiverKey = receiverKey;
-        byte[] typeBytes = ByteBuffer.allocate(4).putInt(transaction.getType()).array();
+        byte[] typeBytes = ByteBuffer.allocate(4).putInt(iTransaction.getType()).array();
         byte[] pkBytes = publicKey.getBytes(StandardCharsets.US_ASCII);
         byte[] rcBytes = receiverKey.getBytes(StandardCharsets.US_ASCII);
-        byte[] data = transaction.getData();
+        byte[] data = iTransaction.getData();
         int allLen = KEY_SIZE * 2 + data.length + SIGN_SIZE;
         byte[] lenByte = ByteBuffer.allocate(4).putInt(allLen).array();
         allLen += 8;
@@ -70,22 +68,30 @@ public class SignedTransaction {
         digest.update(typeBytes);
         digest.update(lenByte);
         digest.update(pkBytes);
+        digest.update(rcBytes);
         digest.update(data);
-        byte[] shaBytes = digest.digest();
+        byte[] shaBytes = digest.digest(digest.digest());
         this.shaHex = new BigInteger(1, shaBytes).toString(16);
         this.signature = Blockchain.getSignature(publicKey, privateKey, shaHex);
-        byte[] signBytes = signature.getBytes(StandardCharsets.US_ASCII);
-        this.transaction = new byte[allLen];
-        System.arraycopy(typeBytes, 0, this.transaction, 0, 4);
-        System.arraycopy(lenByte, 0, this.transaction, 4, 4);
-        System.arraycopy(pkBytes, 0, this.transaction, 8, KEY_SIZE);
-        System.arraycopy(rcBytes, 0, this.transaction, 8 + KEY_SIZE, KEY_SIZE);
-        System.arraycopy(data, 0, this.transaction, 8 + KEY_SIZE * 2, data.length);
-        System.arraycopy(signBytes, 0, this.transaction, 8 + KEY_SIZE * 2 + data.length, SIGN_SIZE);
-        iTransaction = transaction;
+        this.iTransaction = iTransaction;
     }
 
     public final byte[] getTransactionBytes() {
+        byte[] typeBytes = ByteBuffer.allocate(4).putInt(iTransaction.getType()).array();
+        byte[] pkBytes = publicKey.getBytes(StandardCharsets.US_ASCII);
+        byte[] rcBytes = receiverKey.getBytes(StandardCharsets.US_ASCII);
+        byte[] data = iTransaction.getData();
+        int allLen = KEY_SIZE * 2 + data.length + SIGN_SIZE;
+        byte[] lenByte = ByteBuffer.allocate(4).putInt(allLen).array();
+        allLen += 8;
+        byte[] signBytes = signature.getBytes(StandardCharsets.US_ASCII);
+        byte[] transaction = new byte[allLen];
+        System.arraycopy(typeBytes, 0, transaction, 0, 4);
+        System.arraycopy(lenByte, 0, transaction, 4, 4);
+        System.arraycopy(pkBytes, 0, transaction, 8, KEY_SIZE);
+        System.arraycopy(rcBytes, 0, transaction, 8 + KEY_SIZE, KEY_SIZE);
+        System.arraycopy(data, 0, transaction, 8 + KEY_SIZE * 2, data.length);
+        System.arraycopy(signBytes, 0, transaction, 8 + KEY_SIZE * 2 + data.length, SIGN_SIZE);
         return transaction;
     }
 
