@@ -9,8 +9,12 @@ package realmetamorph.blockchain.callbacks;
 
 import realmetamorph.blockchain.block.Block;
 
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.SignatureException;
+
 public interface TakeNewBlockCallback {
 
-    void takeNewBlock(Block block);
+   boolean takeNewBlock(Block block) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException;
 
 }

@@ -11,6 +11,8 @@ public interface IBlockGenerator {
 
     boolean checkSHAHex(String shaHex);
 
+    long getStartNonce();
 
+    int maxTransactionCount();
 
 }

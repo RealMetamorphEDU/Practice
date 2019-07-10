@@ -21,6 +21,8 @@ public interface INetMonitor {
 
     ArrayList<SignedTransaction> getTransactionsByPublicKey(String publicKey);
 
+    ArrayList<SignedTransaction> getTransactionsByType(int type);
+
     // Отправка транзакции
     void sendTransaction(SignedTransaction transaction);
 

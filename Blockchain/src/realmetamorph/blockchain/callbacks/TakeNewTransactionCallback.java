@@ -9,9 +9,13 @@ package realmetamorph.blockchain.callbacks;
 
 import realmetamorph.blockchain.transactions.SignedTransaction;
 
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.SignatureException;
+
 public interface TakeNewTransactionCallback {
 
-    void takeNewTransaction(SignedTransaction transaction);
+    boolean takeNewTransaction(SignedTransaction transaction) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException;
 
 }
 

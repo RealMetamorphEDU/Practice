@@ -27,9 +27,13 @@ public interface IFileMonitor {
 
     ArrayList<SignedTransaction> getTransactionsByPublicKey(String publicKey);
 
+    ArrayList<SignedTransaction> getTransactionsByType(int type);
+
     void addNewBlock(Block block);
 
     // Входящие запросы
     void setCallbackAskNewBlock(AskNewBlockCallback callback);
+
+    boolean validator(SignedTransaction transaction);
 
 }
