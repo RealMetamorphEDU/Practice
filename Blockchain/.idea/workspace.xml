@@ -1,32 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Blockchain:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="35fc75d1-afdf-43bb-954e-3799cde5721d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/block/NonceGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blockchain/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/Blockchain$WorkMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/Blockchain$WorkMode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/Blockchain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/Blockchain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blockchain/Main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blockchain/Main.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/block/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/block/Block.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/block/IBlockGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/block/IBlockGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/callbacks/AskNewBlockCallback.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/callbacks/AskNewBlockCallback.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/callbacks/TakeNewBlockCallback.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/callbacks/TakeNewBlockCallback.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/callbacks/TakeNewTransactionCallback.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/callbacks/TakeNewTransactionCallback.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/filework/IFileMonitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/filework/IFileMonitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/network/INetMonitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/network/INetMonitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/transactions/SignedTransaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/transactions/SignedTransaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/transactions/TestTransaction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/block/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/block/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/block/IBlockGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/block/IBlockGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/AskNewBlockCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/AskNewBlockCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/TakeNewBlockCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/TakeNewBlockCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/TakeNewTransactionCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/TakeNewTransactionCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/filework/IFileMonitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/filework/IFileMonitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/network/INetMonitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/network/INetMonitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/SignedTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/SignedTransaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/TestTransaction.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,7 +34,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -79,10 +66,10 @@
         <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/block/NonceGenerator.java" />
         <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/filework/IFileMonitor.java" />
         <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/block/IBlockGenerator.java" />
-        <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/block/Block.java" />
         <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/SignedTransaction.java" />
+        <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/block/Block.java" />
+        <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java" />
       </list>
     </option>
   </component>
@@ -97,7 +84,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -105,57 +91,12 @@
               <item name="Blockchain" type="b2602c69:ProjectViewProjectNode" />
               <item name="Blockchain" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Blockchain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Blockchain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Blockchain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Blockchain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Blockchain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Blockchain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
-              <item name="block" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Blockchain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Blockchain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
-              <item name="callbacks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Blockchain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Blockchain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
-              <item name="filework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Blockchain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Blockchain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
-              <item name="network" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Blockchain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Blockchain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
-              <item name="transactions" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -220,12 +161,16 @@
       <workItem from="1562522733536" duration="10538000" />
       <workItem from="1562572954288" duration="10248000" />
       <workItem from="1562690876851" duration="17511000" />
-      <workItem from="1562746490768" duration="22559000" />
+      <workItem from="1562746490768" duration="23240000" />
+      <workItem from="1562774364706" duration="442000" />
+      <workItem from="1562780964935" duration="166000" />
+      <workItem from="1562786505823" duration="194000" />
+      <workItem from="1562786870267" duration="14000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74149000" />
+    <option name="totallyTimeSpent" value="75646000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -259,7 +204,6 @@
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32936078" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32995737" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -271,6 +215,7 @@
       <window_info anchor="right" id="SciView" order="8" />
       <window_info anchor="right" id="Capture Analysis" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
+      <window_info anchor="right" id="Coverage" order="11" side_tool="true" weight="0.32995737" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24946696" />
@@ -330,13 +275,6 @@
     <SUITE FILE_PATH="coverage/Blockchain$Main.ic" NAME="Main Coverage Results" MODIFIED="1562747312949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/net/InetAddress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4301">
-          <caret line="380" column="6" lean-forward="true" selection-start-line="380" selection-start-column="6" selection-end-line="380" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -699,17 +637,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/TestTransaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#143#144#0" expanded="true" />
-            <element signature="e#167#168#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/TestTransaction.java" />
     <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/AskBlockCallback.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -793,21 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/block/Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="224" column="9" lean-forward="true" selection-start-line="224" selection-start-column="9" selection-end-line="224" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Block#0;class#Block#0" expanded="true" />
-            <element signature="method#Block#1;class#Block#0" expanded="true" />
-            <element signature="method#createMercleRoot#0;class#Block#0" expanded="true" />
-            <element signature="method#isValid#0;class#Block#0" expanded="true" />
-            <element signature="e#10022#10023#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/block/IBlockGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -815,14 +728,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java" />
+    <entry file="file://$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/block/Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Block#0;class#Block#0" expanded="true" />
+            <element signature="method#createMercleRoot#0;class#Block#0" expanded="true" />
+            <element signature="method#getBlockData#0;class#Block#0" expanded="true" />
+            <element signature="method#isValid#0;class#Block#0" expanded="true" />
+            <element signature="e#9974#9975#0" expanded="true" />
+            <element signature="e#10022#10023#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2658">
-          <caret line="65" column="43" lean-forward="true" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
+        <state relative-caret-position="442">
+          <caret line="60" column="32" lean-forward="true" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
           <folding>
             <element signature="method#start#0;class#Blockchain#0" expanded="true" />
             <element signature="method#stop#0;class#Blockchain#0" expanded="true" />
             <element signature="method#registerTransaction#0;class#Blockchain#0" expanded="true" />
+            <element signature="e#5554#5555#0" expanded="true" />
             <element signature="e#5624#5625#0" expanded="true" />
             <element signature="method#addTransaction#0;class#Blockchain#0" expanded="true" />
             <element signature="method#getTransactionsByPublicKey#0;class#Blockchain#0" expanded="true" />
@@ -830,6 +762,7 @@
             <element signature="method#getBlockByIndex#0;class#Blockchain#0" expanded="true" />
             <element signature="method#createSignature#0;class#Blockchain#0" expanded="true" />
             <element signature="method#checkSignature#0;class#Blockchain#0" expanded="true" />
+            <element signature="e#8301#8302#0" expanded="true" />
             <element signature="e#8351#8352#0" expanded="true" />
             <element signature="method#completeStringWith#0;class#Blockchain#0" expanded="true" />
             <element signature="method#bytes2hex#0;class#Blockchain#0" expanded="true" />
@@ -837,13 +770,6 @@
             <element signature="method#createKeys#0;class#Blockchain#0" expanded="true" />
             <element signature="class#WorkMode#0;class#Blockchain#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -861,7 +787,32 @@
           </splitter-proportions>
         </settings>
       </state>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>Blockchain:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="Copyright.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
         <settings>
           <splitter-proportions>
             <option name="proportions">
@@ -887,6 +838,17 @@
       <state key="JdkListConfigurable.UI">
         <settings>
           <last-edited>IntelliJ IDEA IU-191.6183.87</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

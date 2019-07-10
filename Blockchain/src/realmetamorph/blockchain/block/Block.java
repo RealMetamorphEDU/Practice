@@ -89,6 +89,8 @@ public class Block {
         this.timestamp = new Date();
         this.blockHeight = blockHeight;
         int len = Math.min(transactionCount, transactionsPool.size());
+        if (len == 0)
+            throw new IllegalArgumentException("Transaction count mast be > 0!");
         this.transactions = new ArrayList<>(len);
         int middleLen = 0;
         for (int i = 0; i < len; i++) {

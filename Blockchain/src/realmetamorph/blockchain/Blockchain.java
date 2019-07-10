@@ -56,8 +56,8 @@ public class Blockchain {
             file.setCallbackAskNewBlock((int count) -> {
                 Block prevBlock = file.getBlock(file.getHeight());
                 try {
-                    return new Block(transactionsPool, keys, blockGenerator, count < 0 ? 30 : count, prevBlock.getBlockHeight(), prevBlock.getShaHex());
-                } catch (NoSuchAlgorithmException | InvalidKeyException | SignatureException e) {
+                    return new Block(transactionsPool, keys, blockGenerator, count <= 0 ? 30 : count, prevBlock.getBlockHeight(), prevBlock.getShaHex());
+                } catch (NoSuchAlgorithmException | InvalidKeyException | SignatureException | IllegalArgumentException e) {
                     return null;
                 }
             });

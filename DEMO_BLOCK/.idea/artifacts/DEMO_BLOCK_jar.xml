@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DEMO_BLOCK:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/DEMO_BLOCK_jar</output-path>
+    <root id="archive" name="DEMO_BLOCK.jar">
+      <element id="module-output" name="DEMO_BLOCK" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Blockchain/out/artifacts/Blockchain_jar/Blockchain.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
