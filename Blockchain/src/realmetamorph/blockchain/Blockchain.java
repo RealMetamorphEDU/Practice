@@ -55,8 +55,14 @@ public class Blockchain {
         if (workMode == WorkMode.SINGLE_MODE)
             file.setCallbackAskNewBlock((int count) -> {
                 Block prevBlock = file.getBlock(file.getHeight());
+                String sha;
+                if(prevBlock == null){
+                    sha = completeShaString("");
+                }else {
+                    sha = prevBlock.getShaHex();
+                }
                 try {
-                    return new Block(transactionsPool, keys, blockGenerator, count <= 0 ? 30 : count, prevBlock.getBlockHeight(), prevBlock.getShaHex());
+                    return new Block(transactionsPool, keys, blockGenerator, count <= 0 ? 30 : count, file.getHeight() + 1, sha);
                 } catch (NoSuchAlgorithmException | InvalidKeyException | SignatureException | IllegalArgumentException e) {
                     return null;
                 }
@@ -68,8 +74,14 @@ public class Blockchain {
         if (workMode == WorkMode.NODE_MODE)
             net.setCallbackAskNewBlock((int count) -> {
                 Block prevBlock = file.getBlock(file.getHeight());
+                String sha;
+                if(prevBlock == null){
+                    sha = completeShaString("");
+                }else {
+                    sha = prevBlock.getShaHex();
+                }
                 try {
-                    Block block = new Block(transactionsPool, keys, blockGenerator, count < 0 ? blockGenerator.maxTransactionCount() : count, prevBlock.getBlockHeight(), prevBlock.getShaHex());
+                    Block block = new Block(transactionsPool, keys, blockGenerator, count < 0 ? blockGenerator.maxTransactionCount() : count, file.getHeight()+1, sha);
                     file.addNewBlock(block);
                     return block;
                 } catch (NoSuchAlgorithmException | InvalidKeyException | SignatureException e) {
@@ -132,6 +144,11 @@ public class Blockchain {
 
     public static Class<?> getTransactionClass(int type) {
         return registeredTransactions.getOrDefault(type, null);
+    }
+
+    public boolean addTransaction(ITransaction transaction) {
+        String rKey = bytes2hex(keys.getPublic().getEncoded());
+        return addTransaction(transaction, rKey);
     }
 
     public boolean addTransaction(ITransaction transaction, String receiverKey) {

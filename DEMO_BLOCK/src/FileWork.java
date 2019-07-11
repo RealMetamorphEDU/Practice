@@ -4,9 +4,16 @@ import realmetamorph.blockchain.callbacks.AskNewBlockCallback;
 import realmetamorph.blockchain.filework.IFileMonitor;
 import realmetamorph.blockchain.transactions.SignedTransaction;
 
-import java.security.KeyPair;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /*******************************************************************************
  * Группа: БВТ1703.
@@ -17,93 +24,79 @@ import java.util.Date;
 
 public class FileWork implements IFileMonitor {
     private AskNewBlockCallback askNewBlockCallback;
-    private Blockchain blockchain;
-    private KeyPair keys;
+    private Timer asker;
+    private int currentHeight;
 
-    public FileWork(KeyPair keys) {
-        this.keys = keys;
-    }
-
-    public void setBlockchain(Blockchain blockchain) {
-        this.blockchain = blockchain;
-    }
-
-    boolean execCommand(String[] command) {
-        if (command.length == 0)
-            return false;
-        switch (command[0]) {
-            case "help":
-                if (command.length == 1) {
-                    System.out.println();
-                } else
-                    switch (command[1]) {
-                        case "help":
-                            System.out.println();
-                            break;
-                        case "send":
-                            System.out.println();
-                            break;
-                        case "block":
-                            System.out.println();
-                            break;
-                        case "find":
-                            System.out.println();
-                            break;
-                    }
-                break;
-            case "send":
-                if (command.length < 3) {
-                    System.out.println();
-                } else
-                    switch (command[1]) {
-                        case "message":
-                            blockchain.addTransaction(new MessageTransaction(command[2]), Blockchain.bytes2hex(keys.getPublic().getEncoded()));
-                            System.out.println();
-                            break;
-                        case "date":
-                            blockchain.addTransaction(new TimeTransaction(new Date(Long.parseLong(command[2]))), Blockchain.bytes2hex(keys.getPublic().getEncoded()));
-                            System.out.println();
-                            break;
-                    }
-                break;
-            case "block":
-                if (command.length < 2) {
-                    System.out.println();
-                } else
-                    switch (command[1]) {
-                        case "create":
-                            System.out.println();
-                            break;
-                        case "get":
-                            System.out.println();
-                            break;
-                    }
-                break;
-            case "find":
-
-                break;
-        }
-        return false;
+    public FileWork() {
+        asker = new Timer("Block asker", true);
     }
 
     @Override
     public void start(Blockchain.WorkMode workMode) {
-
+        if (!new File("blocks").exists())
+            new File("blocks").mkdir();
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {
+            if (!new File("blocks/block_" + i + ".blc").exists()) {
+                currentHeight = i - 1;
+                break;
+            }
+        }
+        if (workMode == Blockchain.WorkMode.SINGLE_MODE) {
+            asker.scheduleAtFixedRate(new TimerTask() {
+                @Override
+                public void run() {
+                    Block block = askNewBlockCallback.askNewBlock(5);
+                    if (block != null) {
+                        try {
+                            writeBlock(block);
+                            currentHeight++;
+                            System.out.println("Block created!");
+                            System.out.print("> ");
+                        } catch (IOException ignored) {
+                        }
+                    }
+                }
+            }, 30000, 30000);
+        }
     }
 
     @Override
     public void stop() {
-
+        asker.cancel();
     }
+
+
+    private void writeBlock(Block block) throws IOException {
+        FileOutputStream outputStream = new FileOutputStream("blocks/block_" + block.getBlockHeight() + ".blc");
+        outputStream.write(block.getBlockData());
+        outputStream.close();
+    }
+
+    private Block readBlock(int index) throws IOException, NoSuchMethodException, NoSuchAlgorithmException, InstantiationException, IllegalAccessException, InvocationTargetException, InvalidKeySpecException {
+        File blockFile = new File("blocks/block_" + index + ".blc");
+        if (blockFile.exists()) {
+            FileInputStream inputStream = new FileInputStream(blockFile);
+            byte[] bytes = new byte[inputStream.available()];
+            inputStream.read(bytes, 0, bytes.length);
+            inputStream.close();
+            return new Block(bytes, false);
+        }
+        return null;
+    }
+
 
     @Override
     public Block getBlock(int i) {
-        return null;
+        try {
+            return readBlock(i);
+        } catch (IOException | InvalidKeySpecException | InvocationTargetException | IllegalAccessException | InstantiationException | NoSuchAlgorithmException | NoSuchMethodException e) {
+            return null;
+        }
     }
 
     @Override
     public int getHeight() {
-        return 0;
+        return currentHeight;
     }
 
     @Override

@@ -10,7 +10,7 @@ import realmetamorph.blockchain.block.IBlockGenerator;
 public class Generator implements IBlockGenerator {
     @Override
     public boolean checkSHAHex(String s) {
-        return s.startsWith("00000");
+        return s.startsWith("0");
     }
 
     @Override

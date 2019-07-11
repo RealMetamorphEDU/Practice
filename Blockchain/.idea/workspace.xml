@@ -8,12 +8,15 @@
   <component name="ChangeListManager">
     <list default="true" id="35fc75d1-afdf-43bb-954e-3799cde5721d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blockchain/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blockchain/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/block/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/block/Block.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/transactions/SignedTransaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/transactions/SignedTransaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Blockchain_jar/Blockchain.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Blockchain_jar/Blockchain.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blockchain/META-INF/Blockchain.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/META-INF/Blockchain.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/Blockchain$WorkMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/Blockchain$WorkMode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/Blockchain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/Blockchain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/block/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/block/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DEMO_BLOCK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DEMO_BLOCK/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DEMO_BLOCK/out/production/DEMO_BLOCK/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DEMO_BLOCK/out/production/DEMO_BLOCK/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DEMO_BLOCK/src/FileWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DEMO_BLOCK/src/FileWork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DEMO_BLOCK/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DEMO_BLOCK/src/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,7 +37,17 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="781">
+              <caret line="84" column="1" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -84,6 +97,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -91,19 +105,29 @@
               <item name="Blockchain" type="b2602c69:ProjectViewProjectNode" />
               <item name="Blockchain" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Blockchain" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Blockchain" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Blockchain" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Blockchain" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DEMO_BLOCK" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -166,11 +190,15 @@
       <workItem from="1562780964935" duration="166000" />
       <workItem from="1562786505823" duration="194000" />
       <workItem from="1562786870267" duration="14000" />
+      <workItem from="1562833199667" duration="265000" />
+      <workItem from="1562834794478" duration="187000" />
+      <workItem from="1562835356080" duration="110000" />
+      <workItem from="1562836432942" duration="205000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75646000" />
+    <option name="totallyTimeSpent" value="76413000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -182,9 +210,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24946696" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24886535" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -748,28 +777,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="60" column="32" lean-forward="true" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
-          <folding>
-            <element signature="method#start#0;class#Blockchain#0" expanded="true" />
-            <element signature="method#stop#0;class#Blockchain#0" expanded="true" />
-            <element signature="method#registerTransaction#0;class#Blockchain#0" expanded="true" />
-            <element signature="e#5554#5555#0" expanded="true" />
-            <element signature="e#5624#5625#0" expanded="true" />
-            <element signature="method#addTransaction#0;class#Blockchain#0" expanded="true" />
-            <element signature="method#getTransactionsByPublicKey#0;class#Blockchain#0" expanded="true" />
-            <element signature="method#getTransactionsByType#0;class#Blockchain#0" expanded="true" />
-            <element signature="method#getBlockByIndex#0;class#Blockchain#0" expanded="true" />
-            <element signature="method#createSignature#0;class#Blockchain#0" expanded="true" />
-            <element signature="method#checkSignature#0;class#Blockchain#0" expanded="true" />
-            <element signature="e#8301#8302#0" expanded="true" />
-            <element signature="e#8351#8352#0" expanded="true" />
-            <element signature="method#completeStringWith#0;class#Blockchain#0" expanded="true" />
-            <element signature="method#bytes2hex#0;class#Blockchain#0" expanded="true" />
-            <element signature="method#hex2bytes#0;class#Blockchain#0" expanded="true" />
-            <element signature="method#createKeys#0;class#Blockchain#0" expanded="true" />
-            <element signature="class#WorkMode#0;class#Blockchain#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="781">
+          <caret line="84" column="1" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="1" />
         </state>
       </provider>
     </entry>

@@ -1,10 +1,9 @@
 import realmetamorph.blockchain.Blockchain;
-import realmetamorph.blockchain.filework.IFileMonitor;
+import realmetamorph.blockchain.block.Block;
 
 import java.io.IOException;
-import java.security.InvalidAlgorithmParameterException;
-import java.security.KeyPair;
-import java.security.NoSuchAlgorithmException;
+import java.security.*;
+import java.util.Date;
 import java.util.Scanner;
 
 /*******************************************************************************
@@ -17,23 +16,63 @@ import java.util.Scanner;
 public class Main {
 
 
-    public static void main(String[] args) throws IOException, InterruptedException, InvalidAlgorithmParameterException, NoSuchAlgorithmException {
-        ProcessBuilder cleaner = new ProcessBuilder("cmd", "/c", "cls").inheritIO();
-        cleaner.start().waitFor();
+    public static void main(String[] args) throws IOException, InterruptedException, InvalidAlgorithmParameterException, NoSuchAlgorithmException, SignatureException, InvalidKeyException {
+        //ProcessBuilder cleaner = new ProcessBuilder("cmd", "/c", "cls").inheritIO();
+        //cleaner.start().waitFor();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Демо. Работа с движком блокчейн.");
         System.out.println("Введите ваш SEED:");
         System.out.print("> ");
         String seed = scanner.nextLine().replaceAll("[\n\r]*", "");
         KeyPair keys = Blockchain.createKeys(seed);
-        FileWork file = new FileWork(keys);
-        Blockchain blockchain = new Blockchain(Blockchain.WorkMode.SINGLE_MODE, file, null, new Generator(), keys);
-        file.setBlockchain(blockchain);
-        while (true){
-
-
-
+        Blockchain blockchain = new Blockchain(Blockchain.WorkMode.SINGLE_MODE, new FileWork(), null, new Generator(), keys);
+        Blockchain.registerTransaction(MessageTransaction.class);
+        Blockchain.registerTransaction(TimeTransaction.class);
+        blockchain.start();
+        boolean running = true;
+        System.out.println("Инициализация завершена, доступен ввод.");
+        System.out.print("> ");
+        while (running) {
+            String message = scanner.next();
+            switch (message) {
+                case "msg":
+                    MessageTransaction messageTransaction = new MessageTransaction(scanner.nextLine());
+                    blockchain.addTransaction(messageTransaction);
+                    System.out.println("Message sent.");
+                    System.out.print("> ");
+                    break;
+                case "date":
+                    TimeTransaction timeTransaction = new TimeTransaction(new Date(scanner.nextLong()));
+                    blockchain.addTransaction(timeTransaction);
+                    System.out.println("Time sent.");
+                    System.out.print("> ");
+                    break;
+                case "block":
+                    int index = Integer.parseInt(scanner.next());
+                    Block block = blockchain.getBlockByIndex(index);
+                    if (block == null) {
+                        System.out.println("Hasn't block!");
+                        break;
+                    }
+                    System.out.println("Block info:");
+                    System.out.println("Previous SHA:" + block.getPrevShaHex());
+                    System.out.println("SHA:" + block.getShaHex());
+                    System.out.println("Height:" + block.getBlockHeight());
+                    System.out.println("Mercle root:" + block.getMercleRoot());
+                    System.out.println("Nonce:" + block.getNonce());
+                    System.out.println("Timestamp:" + block.getTimestamp().toString());
+                    System.out.println("Transactions count:" + block.getTransactionsCount());
+                    System.out.println("Signature:" + block.getSignature());
+                    System.out.println("Valid:" + block.isValid());
+                    break;
+                case "quit":
+                    System.out.println("Выход из системы...");
+                    running = false;
+                    break;
+            }
         }
+        blockchain.stop();
+        System.out.println("Завершено.");
     }
 
 
