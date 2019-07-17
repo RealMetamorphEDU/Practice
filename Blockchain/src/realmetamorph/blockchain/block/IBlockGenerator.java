@@ -9,7 +9,7 @@ package realmetamorph.blockchain.block;
 
 public interface IBlockGenerator {
 
-    boolean checkSHAHex(String shaHex);
+    boolean checkSHAHex(String shaHex, long nonce);
 
     long getStartNonce();
 

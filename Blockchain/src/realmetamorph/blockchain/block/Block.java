@@ -108,7 +108,7 @@ public class Block {
         byte[] tcByte = ByteBuffer.allocate(4).putInt(len).array(); // transaction count
         byte[] bsByte = ByteBuffer.allocate(4).putInt(transactionsByteSize).array();
         byte[] mrByte = hex2bytes(mercleRoot, false); // mercle root
-        nonce = new NonceGenerator(psByte, pkByte, tsByte, bhByte, tcByte, mrByte).generateNonce(generator);
+        nonce = new NonceGenerator(psByte, pkByte, tsByte, bhByte, tcByte, bsByte, mrByte).generateNonce(generator);
         byte[] ncByte = ByteBuffer.allocate(8).putLong(nonce).array();
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
         digest.update(psByte);
@@ -237,4 +237,7 @@ public class Block {
         return 92 + KEY_SIZE + SIGN_SIZE;
     }
 
+    public int getTransactionsByteSize() {
+        return transactionsByteSize;
+    }
 }

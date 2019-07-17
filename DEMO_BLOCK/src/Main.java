@@ -37,8 +37,10 @@ public class Main {
             switch (message) {
                 case "msg":
                     MessageTransaction messageTransaction = new MessageTransaction(scanner.nextLine());
-                    blockchain.addTransaction(messageTransaction);
-                    System.out.println("Message sent.");
+                    if (blockchain.addTransaction(messageTransaction)) {
+                        System.out.println("Message sent.");
+                    }
+                    System.out.println("Message didnt send.");
                     System.out.print("> ");
                     break;
                 case "date":
@@ -62,6 +64,7 @@ public class Main {
                     System.out.println("Nonce:" + block.getNonce());
                     System.out.println("Timestamp:" + block.getTimestamp().toString());
                     System.out.println("Transactions count:" + block.getTransactionsCount());
+                    System.out.println("Transactions size:" + block.getTransactionsByteSize());
                     System.out.println("Signature:" + block.getSignature());
                     System.out.println("Valid:" + block.isValid());
                     break;

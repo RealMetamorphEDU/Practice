@@ -38,6 +38,7 @@ public class FileWork implements IFileMonitor {
         for (int i = 0; i < Integer.MAX_VALUE; i++) {
             if (!new File("blocks/block_" + i + ".blc").exists()) {
                 currentHeight = i - 1;
+                System.out.println(currentHeight);
                 break;
             }
         }
@@ -65,30 +66,32 @@ public class FileWork implements IFileMonitor {
         asker.cancel();
     }
 
-
     private void writeBlock(Block block) throws IOException {
         FileOutputStream outputStream = new FileOutputStream("blocks/block_" + block.getBlockHeight() + ".blc");
         outputStream.write(block.getBlockData());
         outputStream.close();
     }
 
-    private Block readBlock(int index) throws IOException, NoSuchMethodException, NoSuchAlgorithmException, InstantiationException, IllegalAccessException, InvocationTargetException, InvalidKeySpecException {
+    private Block readBlock(int index, boolean onlyHeader) throws IOException, NoSuchMethodException, NoSuchAlgorithmException, InstantiationException, IllegalAccessException, InvocationTargetException, InvalidKeySpecException {
         File blockFile = new File("blocks/block_" + index + ".blc");
         if (blockFile.exists()) {
             FileInputStream inputStream = new FileInputStream(blockFile);
-            byte[] bytes = new byte[inputStream.available()];
+            byte[] bytes = null;
+            if (onlyHeader)
+                bytes = new byte[Block.getHeaderSize()];
+            else
+                bytes = new byte[inputStream.available()];
             inputStream.read(bytes, 0, bytes.length);
             inputStream.close();
-            return new Block(bytes, false);
+            return new Block(bytes, onlyHeader);
         }
         return null;
     }
 
-
     @Override
-    public Block getBlock(int i) {
+    public Block getBlock(int i, boolean onlyHeader) {
         try {
-            return readBlock(i);
+            return readBlock(i, onlyHeader);
         } catch (IOException | InvalidKeySpecException | InvocationTargetException | IllegalAccessException | InstantiationException | NoSuchAlgorithmException | NoSuchMethodException e) {
             return null;
         }

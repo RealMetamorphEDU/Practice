@@ -21,7 +21,7 @@ public interface IFileMonitor {
     void stop();
 
     // Исходящие запросы
-    Block getBlock(int blockIndex);
+    Block getBlock(int blockIndex, boolean onlyHeader);
 
     int getHeight();
 

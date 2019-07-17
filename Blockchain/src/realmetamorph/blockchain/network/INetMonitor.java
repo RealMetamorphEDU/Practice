@@ -15,7 +15,7 @@ public interface INetMonitor {
     void stop();
 
     // Исходящие запросы
-    Block getBlock(int blockIndex);
+    Block getBlock(int blockIndex, boolean onlyHeader);
 
     int getHeight();
 

@@ -18,38 +18,30 @@ import static realmetamorph.blockchain.Blockchain.completeShaString;
 class NonceGenerator {
 
     private byte[] data;
-    private int prevLen;
     private boolean interrupted;
     private int threadsCount;
-    private long[] nonces;
+    private long nonce;
 
-    NonceGenerator(byte[] psByte, byte[] pkByte, byte[] tsByte, byte[] bhByte, byte[] tcByte, byte[] mrByte) {
-        this.data = new byte[psByte.length + 8 + KEY_SIZE + tsByte.length + bhByte.length + tcByte.length + mrByte.length];
-        int offset = 0;
-        this.prevLen = psByte.length;
-        System.arraycopy(psByte, 0, data, offset, psByte.length);
-        offset += psByte.length + 8; // nonce size 8
-        System.arraycopy(pkByte, 0, data, offset, pkByte.length);
-        offset += pkByte.length;
-        System.arraycopy(tsByte, 0, data, offset, tsByte.length);
-        offset += tsByte.length;
-        System.arraycopy(bhByte, 0, data, offset, bhByte.length);
-        offset += bhByte.length;
-        System.arraycopy(tcByte, 0, data, offset, tcByte.length);
-        offset += tcByte.length;
-        System.arraycopy(mrByte, 0, data, offset, mrByte.length);
+    NonceGenerator(byte[] psByte, byte[] pkByte, byte[] tsByte, byte[] bhByte, byte[] tcByte, byte[] bsByte, byte[] mrByte) {
+        this.data = new byte[92 + KEY_SIZE];
+        System.arraycopy(psByte, 0, data, 0, 32);
+        System.arraycopy(pkByte, 0, data, 40, KEY_SIZE);
+        System.arraycopy(tsByte, 0, data, 40 + KEY_SIZE, 8);
+        System.arraycopy(bhByte, 0, data, 48 + KEY_SIZE, 4);
+        System.arraycopy(tcByte, 0, data, 52 + KEY_SIZE, 4);
+        System.arraycopy(bsByte, 0, data, 56 + KEY_SIZE, 4);
+        System.arraycopy(mrByte, 0, data, 60 + KEY_SIZE, 32);
         this.interrupted = false;
         this.threadsCount = Runtime.getRuntime().availableProcessors() * 8;
-        this.nonces = new long[threadsCount];
+        this.nonce = 0;
     }
 
     long generateNonce(IBlockGenerator generator) {
-        Thread[] threads = new Thread[threadsCount];
+        Thread thread = null;
         long startNonce = Math.max(generator.getStartNonce(), 0);
         for (int i = 0; i < threadsCount; i++) {
             int srt = i;
-            threads[i] = new Thread(new Runnable() {
-                private final int id = srt;
+            thread = new Thread(new Runnable() {
                 private final long start = srt + startNonce + 1;
                 private final long offset = threadsCount;
 
@@ -59,10 +51,11 @@ class NonceGenerator {
                         MessageDigest digest = MessageDigest.getInstance("SHA-256");
                         for (long j = start; j < Long.MAX_VALUE; j += offset) {
                             byte[] nonceByte = ByteBuffer.allocate(8).putLong(j).array();
-                            System.arraycopy(nonceByte, 0, data, prevLen, 8);
+                            System.arraycopy(nonceByte, 0, data, 32, 8);
                             String shaHex = completeShaString(new BigInteger(1, digest.digest(digest.digest(data))).toString(16));
-                            if (generator.checkSHAHex(shaHex)) {
-                                nonces[id] = j;
+                            if (generator.checkSHAHex(shaHex, j)) {
+                                nonce = j;
+                                interrupted = true;
                                 break;
                             }
                             if (interrupted)
@@ -72,23 +65,14 @@ class NonceGenerator {
                     }
                 }
             });
-            threads[i].start();
+            thread.start();
         }
-        int index = 0;
-
-        while (threads[index++].isAlive()) {
-            if (index == threadsCount)
-                index = 0;
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException ignored) {
-            }
+        try {
+            if (thread != null)
+                thread.join();
+        } catch (InterruptedException ignored) {
         }
-        interrupted = true;
-        for (Thread thread : threads) {
-            thread.interrupt();
-        }
-        return nonces[index - 1];
+        return nonce;
     }
 
 }

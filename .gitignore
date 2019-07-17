@@ -1,5 +1,4 @@
 # blocked
-Block_vcs/
 
 HELP.md
 .gradle
@@ -22,7 +21,7 @@ build/
 # *.iws
 # *.iml
 # *.ipr
-# out/
+out/
 
 ### NetBeans ###
 /nbproject/private/
