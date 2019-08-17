@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 /*******************************************************************************
- * Группа: БВТ1703.
+ * Группа: БВТ1702.
  * Студент: Тимчук А.В.
  * Создано: 10.7.2019.
  * Copyright (c) 2019.
@@ -51,7 +51,7 @@ public class Main {
                     break;
                 case "block":
                     int index = Integer.parseInt(scanner.next());
-                    Block block = blockchain.getBlockByIndex(index);
+                    Block block = blockchain.getBlockByIndex(index, false);
                     if (block == null) {
                         System.out.println("Hasn't block!");
                         break;

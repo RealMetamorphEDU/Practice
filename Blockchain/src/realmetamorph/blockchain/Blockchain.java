@@ -54,7 +54,7 @@ public class Blockchain {
         transactionsPool = new ArrayList<>();
         if (workMode == WorkMode.SINGLE_MODE)
             file.setCallbackAskNewBlock((int count) -> {
-                Block prevBlock = file.getBlock(file.getHeight());
+                Block prevBlock = file.getBlock(file.getHeight(), true);
                 String sha;
                 if(prevBlock == null){
                     sha = completeShaString("");
@@ -73,7 +73,7 @@ public class Blockchain {
             net.setCallbackAskHeight(file::getHeight);
         if (workMode == WorkMode.NODE_MODE)
             net.setCallbackAskNewBlock((int count) -> {
-                Block prevBlock = file.getBlock(file.getHeight());
+                Block prevBlock = file.getBlock(file.getHeight(), true);
                 String sha;
                 if(prevBlock == null){
                     sha = completeShaString("");
@@ -187,11 +187,11 @@ public class Blockchain {
         return file.getTransactionsByType(type);
     }
 
-    public Block getBlockByIndex(int indexBlock) {
+    public Block getBlockByIndex(int indexBlock, boolean onlyHeader) {
         if (workMode != WorkMode.SEND_MODE)
-            return file.getBlock(indexBlock);
+            return file.getBlock(indexBlock, onlyHeader);
         else
-            return net.getBlock(indexBlock);
+            return net.getBlock(indexBlock, onlyHeader);
     }
 
     // Создание подписи, на вход передаётся публичный ключ, приватный ключ и хеш транзакции

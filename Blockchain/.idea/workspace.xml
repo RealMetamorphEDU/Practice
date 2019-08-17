@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35fc75d1-afdf-43bb-954e-3799cde5721d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Blockchain_jar/Blockchain.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Blockchain_jar/Blockchain.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/Blockchain$WorkMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/Blockchain$WorkMode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/Blockchain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/Blockchain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/block/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/block/Block.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/block/IBlockGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/block/IBlockGenerator.class" afterDir="false" />
@@ -19,21 +17,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/filework/IFileMonitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/filework/IFileMonitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/network/INetMonitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blockchain/realmetamorph/blockchain/network/INetMonitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/block/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/block/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/block/IBlockGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/block/IBlockGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/block/NonceGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/block/NonceGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/AskBlockCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/callbacks/AskBlockCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/filework/IFileMonitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/filework/IFileMonitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/realmetamorph/blockchain/network/INetMonitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/realmetamorph/blockchain/network/INetMonitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DEMO_BLOCK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DEMO_BLOCK/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DEMO_BLOCK/blocks/block_0.blc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DEMO_BLOCK/blocks/block_1.blc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DEMO_BLOCK/out/production/DEMO_BLOCK/FileWork.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DEMO_BLOCK/out/production/DEMO_BLOCK/FileWork.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DEMO_BLOCK/out/production/DEMO_BLOCK/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DEMO_BLOCK/out/production/DEMO_BLOCK/Generator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DEMO_BLOCK/out/production/DEMO_BLOCK/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DEMO_BLOCK/out/production/DEMO_BLOCK/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DEMO_BLOCK/src/FileWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DEMO_BLOCK/src/FileWork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DEMO_BLOCK/src/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DEMO_BLOCK/src/Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DEMO_BLOCK/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DEMO_BLOCK/src/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,20 +39,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="84" column="1" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="1" />
+            <state relative-caret-position="1938">
+              <caret line="193" column="54" selection-start-line="193" selection-start-column="54" selection-end-line="193" selection-end-column="54" />
+              <folding>
+                <element signature="method#Blockchain#0;class#Blockchain#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/block/NonceGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="72" column="43" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
+            <state relative-caret-position="549">
+              <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+              <folding>
+                <element signature="method#run#0;class#1684:2828" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,8 +97,8 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/transactions/SignedTransaction.java" />
         <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/block/Block.java" />
-        <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java" />
         <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/block/NonceGenerator.java" />
+        <option value="$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java" />
       </list>
     </option>
   </component>
@@ -123,6 +113,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -152,8 +144,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -229,11 +219,12 @@
       <workItem from="1562836432942" duration="205000" />
       <workItem from="1563381227017" duration="97000" />
       <workItem from="1563381842553" duration="195000" />
+      <workItem from="1563619582943" duration="173000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76705000" />
+    <option name="totallyTimeSpent" value="76878000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -245,10 +236,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24886535" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24840085" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -797,17 +788,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java">
+    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/block/NonceGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="84" column="1" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="1" />
+        <state relative-caret-position="549">
+          <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+          <folding>
+            <element signature="method#run#0;class#1684:2828" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/block/NonceGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/realmetamorph/blockchain/Blockchain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="72" column="43" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
+        <state relative-caret-position="1938">
+          <caret line="193" column="54" selection-start-line="193" selection-start-column="54" selection-end-line="193" selection-end-column="54" />
+          <folding>
+            <element signature="method#Blockchain#0;class#Blockchain#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

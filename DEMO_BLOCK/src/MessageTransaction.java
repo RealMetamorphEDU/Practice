@@ -3,7 +3,7 @@ import realmetamorph.blockchain.transactions.ITransaction;
 import java.nio.charset.StandardCharsets;
 
 /*******************************************************************************
- * Группа: БВТ1703.
+ * Группа: БВТ1702.
  * Студент: Тимчук А.В.
  * Создано: 10.7.2019.
  * Copyright (c) 2019.
