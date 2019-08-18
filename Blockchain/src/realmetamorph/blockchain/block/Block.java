@@ -23,6 +23,7 @@ public class Block {
     private final String shaHex;
     private final String signature;
     private final ArrayList<SignedTransaction> transactions;
+    private final int transactionsCount;
     private final int transactionsByteSize;
 
 
@@ -69,6 +70,7 @@ public class Block {
         this.signature = bytes2hex(snByte);
         this.transactionsByteSize = ByteBuffer.wrap(bsByte).getInt();
         this.transactions = onlyHeader ? null : new ArrayList<>();
+        this.transactionsCount = ByteBuffer.wrap(tcByte).getInt();
         int offset = 0;
         int lastSize = transactionsByteSize;
         while (lastSize != 0 && !onlyHeader) {
@@ -92,6 +94,7 @@ public class Block {
         if (len == 0)
             throw new IllegalArgumentException("Transaction count mast be > 0!");
         this.transactions = new ArrayList<>(len);
+        this.transactionsCount = len;
         int middleLen = 0;
         for (int i = 0; i < len; i++) {
             transactions.add(transactionsPool.get(i));
@@ -190,7 +193,7 @@ public class Block {
     }
 
     public int getTransactionsCount() {
-        return transactions.size();
+        return transactionsCount;
     }
 
     public SignedTransaction getTransaction(int index) {
@@ -203,7 +206,7 @@ public class Block {
         byte[] pkByte = publicKey.getEncoded(); // publick key from block creator
         byte[] tsByte = ByteBuffer.allocate(8).putLong(timestamp.getTime()).array(); // timestamp
         byte[] bhByte = ByteBuffer.allocate(4).putInt(blockHeight).array(); // blockchain height
-        byte[] tcByte = ByteBuffer.allocate(4).putInt(transactions.size()).array(); // transaction count
+        byte[] tcByte = ByteBuffer.allocate(4).putInt(transactionsCount).array(); // transaction count
         byte[] bsByte = ByteBuffer.allocate(4).putInt(transactionsByteSize).array();
         byte[] mrByte = hex2bytes(mercleRoot, false); // mercle root
         byte[] snByte = hex2bytes(signature, true); // sign
