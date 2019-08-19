@@ -13,6 +13,7 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import org.bson.BsonBinary;
 import org.bson.BsonDocument;
+import org.bson.BsonInt32;
 import realmetamorph.blockchain.Blockchain;
 import realmetamorph.blockchain.block.Block;
 import realmetamorph.blockchain.callbacks.AskNewBlockCallback;
@@ -43,7 +44,7 @@ public class FileMonitor implements IFileMonitor {
 
     @Override
     public Block getBlock(int i, boolean b) {
-        MongoCursor<BsonDocument> cursor = blocks.find(Filters.eq("_id", i)).iterator();
+        MongoCursor<BsonDocument> cursor = blocks.find(Filters.eq("height", i)).iterator();
         if (cursor.hasNext()) {
             BsonDocument document = cursor.next();
             BsonBinary binary = document.getBinary("block_data", null);
@@ -77,6 +78,7 @@ public class FileMonitor implements IFileMonitor {
     public void addNewBlock(Block block) {
         BsonBinary binary = new BsonBinary(block.getBlockData());
         BsonDocument document = new BsonDocument("block_data", binary);
+        document.put("height", new BsonInt32(block.getBlockHeight()));
         blocks.insertOne(document);
     }
 
