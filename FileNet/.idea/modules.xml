@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Client/Client.iml" filepath="$PROJECT_DIR$/Client/Client.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ServerNode/ServerNode.iml" filepath="$PROJECT_DIR$/ServerNode/ServerNode.iml" />
       <module fileurl="file://$PROJECT_DIR$/springnode/springnode.iml" filepath="$PROJECT_DIR$/springnode/springnode.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/springnode.main.iml" filepath="$PROJECT_DIR$/.idea/modules/springnode.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/springnode.test.iml" filepath="$PROJECT_DIR$/.idea/modules/springnode.test.iml" />

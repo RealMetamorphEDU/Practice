@@ -22,6 +22,6 @@ public class BlockGenerator implements IBlockGenerator {
 
     @Override
     public int maxTransactionCount() {
-        return 30;
+        return 50;
     }
 }
