@@ -85,7 +85,7 @@ public class APIController implements INetMonitor {
         }
     }
 
-    @GetMapping("/block/height/")
+    @GetMapping("/block/height")
     @ResponseBody
     public String getBlockHeight() {
         int height = askHeightCallback.askHeight();
@@ -109,7 +109,7 @@ public class APIController implements INetMonitor {
         if (block == null)
             return "{\"error\":\"Not exist.\"}";
         BsonBinary binary = new BsonBinary(block.getBlockData());
-        return new BsonDocument("block_header", binary).toJson();
+        return new BsonDocument("block_data", binary).toJson();
     }
 
     @PostMapping(value = "/transaction")
@@ -137,7 +137,7 @@ public class APIController implements INetMonitor {
                     return new ResponseEntity<>("{\"error\":\"No file\"}", HttpStatus.BAD_REQUEST);
                 try {
                     MessageDigest digest = MessageDigest.getInstance("SHA-256");
-                    digest.update(file.getName().getBytes(StandardCharsets.UTF_8));
+                    digest.update(addFileTransaction.getFilename().getBytes(StandardCharsets.UTF_8));
                     InputStream inputStream = file.getInputStream();
                     while (inputStream.available() > 0) {
                         int len = Math.min(1024, inputStream.available());
@@ -146,7 +146,7 @@ public class APIController implements INetMonitor {
                         digest.update(bytes, 0, len);
                     }
                     String sha = Blockchain.bytes2hex(digest.digest(digest.digest()));
-                    if (!Objects.equals(file.getName(), addFileTransaction.getFilename()) && !Objects.equals(addFileTransaction.getSha(), sha))
+                    if (!Objects.equals(addFileTransaction.getSha(), sha))
                         return new ResponseEntity<>("{\"error\":\"Invalid file info.\"}", HttpStatus.BAD_REQUEST);
                     if (!takeNewTransactionCallback.takeNewTransaction(signedTransaction))
                         return new ResponseEntity<>("{\"error\":\"Invalid transaction.\"}", HttpStatus.BAD_REQUEST);
@@ -157,7 +157,7 @@ public class APIController implements INetMonitor {
                     metadata.put("transaction_date", addFileTransaction.getDate().getTime());
                     metadata.put("original_name", file.getOriginalFilename());
                     try {
-                        gridFsTemplate.store(file.getInputStream(), file.getName(), metadata);
+                        gridFsTemplate.store(file.getInputStream(), addFileTransaction.getFilename(), metadata);
                         return new ResponseEntity<>("{\"status\":\"The file is uploaded\"}", HttpStatus.CREATED);
                     } catch (Exception e) {
                         return new ResponseEntity<>("{\"error\":\"The file is not uploaded.\"}", HttpStatus.INTERNAL_SERVER_ERROR);
@@ -174,7 +174,7 @@ public class APIController implements INetMonitor {
                     return new ResponseEntity<>("{\"error\":\"No file\"}", HttpStatus.BAD_REQUEST);
                 try {
                     MessageDigest digest = MessageDigest.getInstance("SHA-256");
-                    digest.update(file.getName().getBytes(StandardCharsets.UTF_8));
+                    digest.update(replaceFileTransaction.getFilename().getBytes(StandardCharsets.UTF_8));
                     InputStream inputStream = file.getInputStream();
                     while (inputStream.available() > 0) {
                         int len = Math.min(1024, inputStream.available());
@@ -183,7 +183,7 @@ public class APIController implements INetMonitor {
                         digest.update(bytes, 0, len);
                     }
                     String sha = Blockchain.bytes2hex(digest.digest(digest.digest()));
-                    if (!Objects.equals(file.getName(), replaceFileTransaction.getFilename()) && !Objects.equals(replaceFileTransaction.getSha(), sha))
+                    if (!Objects.equals(replaceFileTransaction.getSha(), sha))
                         return new ResponseEntity<>("{\"error\":\"Invalid file info.\"}", HttpStatus.BAD_REQUEST);
 
                     Query query = new Query();

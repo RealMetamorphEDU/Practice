@@ -332,7 +332,9 @@ public class FileMonitor implements IFileMonitor {
 
     @Override
     public boolean validator(SignedTransaction signedTransaction) {
-        // TODO
+        if (signedTransaction.getTransaction().getType() == 3){
+            return !((ShareFileTransaction) signedTransaction.getTransaction()).getKeeperKey().equals(signedTransaction.getReceiverKey());
+        }
         return true;
     }
 }
