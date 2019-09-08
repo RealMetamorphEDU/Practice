@@ -89,6 +89,7 @@ public class Main {
                 filesMonitor = new FilesMonitor(net);
                 System.out.println("Checking blockchain...");
                 filesMonitor.update();
+                System.out.println("Blockchain checked!");
                 if (choose == 2) {
                     System.out.println("Input your secret seed:");
                     scanner.skip("[\n\r]+");

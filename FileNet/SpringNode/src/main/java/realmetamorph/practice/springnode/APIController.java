@@ -308,7 +308,7 @@ public class APIController implements INetMonitor {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                if (takenTransactions > 5) {
+                if (takenTransactions > 0) {
                     Block block = askNewBlockCallback.askNewBlock(takenTransactions);
                     if (block != null)
                         takenTransactions -= block.getTransactionsCount();
